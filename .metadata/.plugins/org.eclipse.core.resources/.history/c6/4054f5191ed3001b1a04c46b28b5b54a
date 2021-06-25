@@ -1,0 +1,8 @@
+package superclass;
+
+public class SuperSonicAirplane extends Airplane {
+
+	
+	}
+
+}

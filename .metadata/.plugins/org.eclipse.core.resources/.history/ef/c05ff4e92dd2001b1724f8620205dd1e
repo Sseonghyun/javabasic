@@ -1,0 +1,27 @@
+package structure;
+
+public class Structure2 {
+	
+	// person 내부의 정보를 쉽게 조회하기 위한 메서드 제작
+	public static void getInto(Person p) {
+		System.out.println(p.name);
+		System.out.println(p.age);
+		System.out.println(p.pNum);
+	}
+	public static void main(String[] args) {
+		// 사람을 두 명 만들어보세요 (a, b)
+		Person a = new Person();
+		a.name = "박지성";
+		a.age = 40;
+	    a.pNum = "010-0000-0000";
+	    
+	    System.out.println("------------");
+	    
+	    Person b = new Person();
+	    b.name = "손흥민";
+	    b.age = 29;
+	    b.pNum = "010-1111-1111";
+
+	}
+
+}

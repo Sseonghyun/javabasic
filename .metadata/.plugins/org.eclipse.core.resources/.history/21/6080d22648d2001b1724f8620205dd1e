@@ -1,0 +1,23 @@
+package constructor;
+
+public class Car1 {
+	public int gas;
+	public int speed;
+	public String name;
+	public double mpg;
+	public String color;
+	
+	public Car1(int g , int s , String n , double m , String c) {
+		gas = g;
+		speed = s;
+		name = n;
+		mpg = m;
+		color = c;
+		System.out.println("자동차 생성 완료!");
+		System.out.println("연료 : " + gas +
+				           ", 속도 : " + speed +
+				           ", 이름 : " + name +
+				           ", 연비 : " + mpg +
+				           ", 색상 : " + color);
+}
+}

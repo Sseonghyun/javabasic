@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="structure.PersonClass"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="inheritance.game.commoner"/>
+<fullyQualifiedTypeName name="accessmodifier2.Child"/>
+<fullyQualifiedTypeName name="accessmodifier2.Parent"/>
+<fullyQualifiedTypeName name="accessmodifier3.Child2"/>
+<fullyQualifiedTypeName name="inheritance.game.Commoner"/>
+<fullyQualifiedTypeName name="accessmodifier.game.ProtectedMagician"/>
+</qualifiedTypeNameHistroy>

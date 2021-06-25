@@ -1,0 +1,14 @@
+package polymorphism;
+
+public class Salaryman extends Person{
+	private int salary;
+	
+	public Salaryman(String name , int age , int salary) {
+		super(name, age);
+		this.salary = salary;
+	}
+	public void showPerson() {
+		System.out.println("연봉 : " + salary + " 만원");
+		System.out.println("---------------");
+	}
+}

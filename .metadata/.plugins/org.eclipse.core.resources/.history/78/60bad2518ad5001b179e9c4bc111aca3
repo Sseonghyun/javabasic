@@ -1,0 +1,7 @@
+package Polymorphism.game;
+
+public class Hydra extends Monster {
+	public Hydra() {
+	super("히드라",10,1,1);
+	}
+}

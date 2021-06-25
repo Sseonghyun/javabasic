@@ -1,0 +1,46 @@
+package Polymorphism.game;
+
+import interaction.game.Dragon;
+
+public class Zeus {
+	public class Fighter {
+		private int level;
+		private int exp;
+		private int hp;
+		private int mp;
+		private int atk;
+		private int df;
+		
+		
+		public Fighter() {
+			this.level = 1;
+			this.exp = 0;
+			this.hp = 35;
+			this.mp = 10;
+			this.atk = 5;
+			this.df = 1;
+		}
+	
+		public void huntMonster(Monster monster) {
+			if(monster.getHp() <= 0) {
+				System.out.println("이미 죽은 몬스터를 공격할 수 없습니다.");
+				return;
+			}
+		
+		monster.Battle(this.atk);
+		if(monster.getAtk() > (this.hp + this.df)) {
+			System.out.println("유저가 사망했습니다.");
+			return;
+		}
+		if(monster.getHp() <= 0) {
+			System.out.println("경험치를 30 획득하였습니다.");
+			this.exp += 30;
+			System.out.println("몬스터와의 교전 완료!");
+			return;
+		}
+		// 모든 전투상황이 끝난뒤에는 본인의 체력을 깎습니다.
+		this.hp = (this.hp + this.df) - monster.getAtk();
+		System.out.println("몬스터와의 교전 완료!");
+		}
+}
+}
