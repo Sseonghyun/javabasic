@@ -1,9 +1,0 @@
-package constructor;
-
-public class Car1 {
-	public int gas;
-	public int speed;
-	public String owner;
-	public String mpg;
-	public String color;
-}

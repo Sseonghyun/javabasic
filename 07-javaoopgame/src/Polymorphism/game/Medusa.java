@@ -1,10 +1,6 @@
 package Polymorphism.game;
 
 public class Medusa extends Monster {
-	private int hp;
-	private int df;
-	private int atk;
-	private int exp;
 	
 	public Medusa() {
 	    super("메두사",30,3,3,10);

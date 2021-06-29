@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="accessmodifier3.Child2"/>
 <fullyQualifiedTypeName name="inheritance.game.Commoner"/>
 <fullyQualifiedTypeName name="accessmodifier.game.ProtectedMagician"/>
+<fullyQualifiedTypeName name="casting.Animal"/>
+<fullyQualifiedTypeName name="casting.Tiger"/>
 </qualifiedTypeNameHistroy>

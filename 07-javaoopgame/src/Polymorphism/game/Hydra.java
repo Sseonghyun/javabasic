@@ -1,10 +1,6 @@
 package Polymorphism.game;
 
 public class Hydra extends Monster {
-	private int hp;
-	private int df;
-	private int atk;
-	private int exp;
 	
 	public Hydra() {
 	    super("히드라",30,5,3,15);

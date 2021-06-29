@@ -1,10 +1,6 @@
 package Polymorphism.game;
 
 public class Kerberos extends Monster {
-	private int hp;
-	private int df;
-	private int atk;
-	private int exp;
 	
 	public Kerberos() {
 		super("케르베로스",30,3,5,20);
