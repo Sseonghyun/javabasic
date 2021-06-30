@@ -28,7 +28,7 @@ public class SwitchCase1 {
 		case 4:
 			System.out.println("four");
 			break;//case 별로 작성해야 코드가 줄줄이 실행되지않음
-		case 5:
+        case 5:
 			System.out.println("five");
 			break;//case 별로 작성해야 코드가 줄줄이 실행되지않음
 		default :
