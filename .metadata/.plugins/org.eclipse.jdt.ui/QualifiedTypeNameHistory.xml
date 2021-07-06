@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="structure.PersonClass"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="inheritance.game.commoner"/>
 <fullyQualifiedTypeName name="accessmodifier2.Child"/>
@@ -12,5 +11,7 @@
 <fullyQualifiedTypeName name="casting.Animal"/>
 <fullyQualifiedTypeName name="casting.Tiger"/>
 <fullyQualifiedTypeName name="interface1.Vehicle"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
