@@ -14,7 +14,7 @@ public class Lotto1 {
 		// ArrayList의 정렬은 .sort()대신
 		// collections.sort(리스트);를 이용해 정렬합니다.	
 		List<Integer> lotto = new ArrayList<>();
-		int getNum;
+		int getNum = 0;
 		while(lotto.size() !=6) { // 6개가 아니면 돌리고 6개가 되면 탈출해라.
 			getNum = (int)(Math.random() * 45) +1; 
 			if(!lotto.contains(getNum)) {
