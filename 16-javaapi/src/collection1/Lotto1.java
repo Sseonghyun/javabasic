@@ -19,13 +19,17 @@ public class Lotto1 {
 			getNum = (int)(Math.random() * 45) +1; 
 			if(!lotto.contains(getNum)) {
 				// contains는 없을때 false, 있을때 true 이지만
-				// !를 사용하여 없는숫자가 나올경우 true가 되어 실행.
-				lotto.add(getNum);
+				// !를 사용하여 반대로 없는숫자가 나올경우 true가 되어 실행.
+				lotto.add(getNum); // 0 -> 1 순으로 진행
 			}
 		}
 		Collections.sort(lotto); // 정렬해주는 입력값.
-		System.out.println("추첨된 번호:" + lotto); // 실행문
+		System.out.println("추첨된 번호 : " + lotto); // 실행문
 
+		while(lotto.contains(getNum)) { // 랜덤으로 결정한 숫자가 lotto내부의 있는지 점검하여 있으면 다시 돌려라.
+			getNum = (int)(Math.random() * 45) + 1; // 1-45 사이에 숫자를 랜덤으로 결정
+		}
+		System.out.println("2등 당첨번호 : " + "[" + getNum + "]");
 	}
 
 }
