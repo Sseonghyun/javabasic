@@ -37,9 +37,9 @@ if(resultData.getUid() == null) {
 <body>
 <h1><%= resultData.getUid() %>계정 정보 수정</h1>
 <form action = "user_update_ok.jsp" method = "post">
-<input type = "text" name = "uid" value = "<%=resultData.getUid() %>" placeholder = "ID" readonly = "true"/><br/>
-<input type = "password" name = "upw" placeholder = "PW"/><br/>
-<input type = "text" name = "uname" value = "<%=resultData.getUname() %>" placeholder = "NAME"/><br/>
+<input type = "text" name = "uid" value = "<%=resultData.getUid() %>" placeholder = "ID" readonly = "true" required><br/>
+<input type = "password" name = "upw" placeholder = "PW" required><br/>
+<input type = "text" name = "uname" value = "<%=resultData.getUname() %>" placeholder = "NAME" required><br/>
 <input type = "text" name = "email" value = "<%=resultData.getEmail() %>" placeholder = "EMAIL"/><br/>
 <input type = "submit" value = "계정정보 수정하기"><br/>
 </form>

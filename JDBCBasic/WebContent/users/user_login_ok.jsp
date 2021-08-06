@@ -53,6 +53,7 @@ if(idSession != null ) {
 <a href = "user_logout.jsp">로그아웃</a>
 <a href = "user_delete_form.jsp">회원탈퇴</a>
 <a href = "user_update_form.jsp">회원정보 수정하기</a>
+<a href = "user_get_all.jsp">회원 전체 목록 보기</a>
 
 </body>
 </html>

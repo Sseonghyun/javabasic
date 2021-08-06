@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-    session.invalidate();
-    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>수정에 실패했습니다 다시 시도해주세요.</h1>
-<a href = "user_login_form.jsp">로그인 창으로 돌아가기</a>
+
+${10 } <br/>
+${3.14 } <br/>
+${"hello" } <br/>
+${true } <br/>
+${a + 20 } <br/>
+
+<hr/>
+${a } <br/>
+${a < 10 } <br/>
+${(a==15)? "a는 15와 같다" : "a는 15와 다르다" } <br/>
+${(a>10)||(a!=15)}
+
+
 </body>
 </html>
