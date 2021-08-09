@@ -3,10 +3,9 @@
 <%@page import="kr.co.ictedu.UsersDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@ taglib url="http://java.sun.com/jsp/jstl/core"
-prefix="c"%>    --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     <%
-    //로그인 하지 않은 사용자 처리
+    // 0. 로그인 하지 않은 사용자 처리
     String idSession = (String)session.getAttribute("session_id");
 
     if(idSession == null) {
@@ -18,7 +17,7 @@ prefix="c"%>    --%>
     UsersDAO dao = UsersDAO.getInstance();
     ArrayList<UsersVO> userList = dao.getAllUser();
     // 디버깅 결과 DB내 전체 데이터가 출력되면 성공.
-    System.out.println(userList);
+    // System.out.println(userList);
     %>
 <!DOCTYPE html>
 <html>
@@ -53,7 +52,7 @@ prefix="c"%>    --%>
 <%-- JSTL 적용 버전
 forEach 구문은 반복문이고, Items에 향상된 for문의 우측요소ㅓ
 그리고 var에 왼쪽 요소를 집어넣어주면됩니다. --%>
-<c:forEach var="user" items="${userList }">
+<c:forEach var="user" items="<%=userList %>">
      <tr>
         <td>${user.uid }</td>
         <td>${user.uname }</td>
