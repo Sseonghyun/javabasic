@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class BoardVO {
 
-	private int bid;
+	private int bid;//변수명을 소문자로만 작성하셔서 board_list.jsp에서도 소문자로 적어주셔야 출력됩니다.
 	private String bname;
 	private String btitle;
 	private String bcontent;
@@ -21,7 +21,7 @@ public class BoardVO {
 	// ALT + SHIFT + S / 우클릭 source
 	
 	// 아무것도 안 받는 생성자
-	public void BoardVO() {
+	public BoardVO() {
 		
 	}
 	// 모든 요소를 다 받는 생성자
