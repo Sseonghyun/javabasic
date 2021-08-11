@@ -142,7 +142,7 @@ public class BoardDAO {
 					}
 			}
 			
-		return boardList;//{} 여닫는 부분 잘못 보신것 같습니다. 다시 돌려보세요.
+		return boardList;
 		} 
 	
 	public BoardVO getBoardDetail(String bid) {
@@ -197,11 +197,103 @@ public class BoardDAO {
 		return board;
 	
 	
-	} 
+	} // detail end
 	
+	
+	// 글 삭제로직
+	public int deleteBoard(String bid) {
+		// 사용할 변수 선언
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		int resultcode;
+		
+		String sql = "DELETE FROM jspboard WHERE bid=?";
+	
+		try {
+		// 커넥션 연결 및 쿼리문 실행	
+			con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, bid);
+			
+			pstmt.executeUpdate();
+			
+			resultcode = 1;
+			
+			} catch(Exception e) {
+				e.printStackTrace();
+				resultcode = 0;
+			} finally {
+					try { // con 닫기
+						if(con!=null && !con.isClosed()) {
+							con.close();
+						} // pstmt 닫기
+						if(pstmt!=null && !pstmt.isClosed()) {
+							pstmt.close();
+						} 	
+						
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					
+	}
+		return resultcode;
+	
+} // delete end 
+	
+	// 글 수정 로직
+	public int updateBoard (BoardVO board) {
+		// 변수 선언
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		int resultCode;
+		
+		String sql = "UPDATE jspboard SET " +
+				" bname=?, btitle=?, bcontent=?, bdate=?, bhit=? " +
+				" WHERE bid=? ";
+
+	try {
+		// 커넥션 연결 후 DB에 쿼리 쏴주시고
+		con = ds.getConnection();
+		
+		pstmt = con.prepareStatement(sql);
+		
+		pstmt.setString(1, board.getBname());
+		pstmt.setString(2, board.getBtitle());
+		pstmt.setString(3, board.getBcontent());
+		pstmt.setTimestamp(4, board.getBdate());
+		pstmt.setInt(5, board.getBhit());
+		pstmt.setInt(6, board.getBid());
+		
+		
+		pstmt.executeUpdate();
+		
+		resultCode = 1;
+		
+		} catch(Exception e) {
+			e.printStackTrace();
+			resultCode = 0;
+		} finally {
+				try { // con 닫기
+					if(con!=null && !con.isClosed()) {
+						con.close();
+					} // pstmt 닫기
+					if(pstmt!=null && !pstmt.isClosed()) {
+						pstmt.close();
+					} 
+							
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+	
+				
 }
+	return resultCode;
+	
+}// update end
 
-	
-	
-	
-
+}

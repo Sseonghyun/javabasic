@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.ictedu.board.service.BoardDeleteService;
 import kr.co.ictedu.board.service.BoardDetailService;
 import kr.co.ictedu.board.service.BoardListService;
+import kr.co.ictedu.board.service.BoardUpdateService;
 import kr.co.ictedu.board.service.BoardWriteService;
 import kr.co.ictedu.board.service.IBoardService;
 
@@ -106,11 +108,23 @@ public class PatternServlet extends HttpServlet {
 			ui = "/board/board_list.jsp";
 			// 경로 저장 후에는 페이지 강제이동 (forward)를 수행합니다.
 			
-			
 	} else if(uri.equals("/MyFirstWeb/boardupdate.do")) {
-		System.out.println("글 수정 창으로 이동합니다.");
+		sv = new BoardDetailService();
+		sv.execute(request, response);
+		ui = "/board/board_update_form.jsp";
+	} else if(uri.equals("/MyFirstWeb/boardupdateok.do")) {
+		// 서비스 객체 생성
+		sv = new BoardUpdateService();
+		// 서비스 메서드 실행
+		sv.execute(request, response);
+		// 수정한 다음 디테일로 보내기.
+		// 내가 수정한 글 번호 받아오기
+		String strbid = request.getParameter("id");
+		ui = "/boarddetail.do?bid=" + strbid;
 	} else if(uri.equals("/MyFirstWeb/boarddelete.do")) {
-		System.out.println("글 삭제 창으로 이동합니다.");
+		sv = new BoardDeleteService();
+		sv.execute(request, response);
+		ui = "/boardselect.do";
 	} else if(uri.equals("/MyFirstWeb/boardselect.do")) {
 		// 글 조회창 로직을 실행하도록 내부 코드를 작성해주세요.
 		sv = new BoardListService();
