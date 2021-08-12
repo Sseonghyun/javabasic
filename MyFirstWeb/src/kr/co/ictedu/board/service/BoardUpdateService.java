@@ -2,8 +2,10 @@ package kr.co.ictedu.board.service;
 
 import java.sql.Timestamp;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.ictedu.board.model.BoardDAO;
 import kr.co.ictedu.board.model.BoardVO;
@@ -11,6 +13,21 @@ import kr.co.ictedu.board.model.BoardVO;
 public class BoardUpdateService implements IBoardService {
 // 오버라이딩된 메서드 내부 작성하기
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// 세션 쓰는법
+		HttpSession session = null;
+		session = request.getSession();
+		String idSession = (String)session.getAttribute("i_s");
+				
+		if(idSession == null) {
+			try {
+				String ui = "/users/user_login.jsp";
+				RequestDispatcher dp = request.getRequestDispatcher(ui);
+				dp.forward(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+				
 		// 1. 파라미터 6개 받아오기
 		String strbid = request.getParameter("id");
 		int bid = Integer.parseInt(strbid);

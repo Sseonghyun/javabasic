@@ -296,4 +296,46 @@ public class BoardDAO {
 	
 }// update end
 
+	
+	
+	// 글 조회를 상승시키는 메서드
+	public void upHit(String bid) {
+		// 필요 변수들을 생성해주세요
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		// 특정 글의 조회수를 1 올리는 쿼리문
+		String sql = "UPDATE jspboard SET bhit = bhit + 1 " +
+		             "WHERE bid = ?";
+		
+		// DB연결 후 코드를 생성해주세요.
+		try {
+			// 커넥션 연결 후 DB에 쿼리 쏴주시고
+			con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, bid);
+			
+			pstmt.executeUpdate();			
+				
+	      } catch(Exception e) {
+		     e.printStackTrace();     
+	     } finally {
+			try { // con 닫기
+				if(con!=null && !con.isClosed()) {
+					con.close();
+				} // pstmt 닫기
+				if(pstmt!=null && !pstmt.isClosed()) {
+					pstmt.close();
+				} 	
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+   }	
+	
+} // end uphit
+	
+	
 }

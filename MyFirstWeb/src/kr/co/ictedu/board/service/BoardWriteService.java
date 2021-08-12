@@ -1,7 +1,9 @@
 package kr.co.ictedu.board.service;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.ictedu.board.model.BoardDAO;
 import kr.co.ictedu.board.model.BoardVO;
@@ -10,7 +12,21 @@ import kr.co.ictedu.board.model.BoardVO;
 public class BoardWriteService implements IBoardService {
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		                
+		// 세션 쓰는법
+		HttpSession session = null;
+		session = request.getSession();
+		String idSession = (String)session.getAttribute("i_s");
+		
+		if(idSession == null) {
+			try {
+				String ui = "/users/user_login.jsp";
+				RequestDispatcher dp = request.getRequestDispatcher(ui);
+				dp.forward(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+				
 		// getParameter로 폼에서 쏜 데이터를 들고오게 해 주세요.
 		try {
 		request.setCharacterEncoding("utf-8");

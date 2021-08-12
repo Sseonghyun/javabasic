@@ -31,7 +31,6 @@
 <fullyQualifiedTypeName name="javax.naming.Context"/>
 <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -48,4 +47,7 @@
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardListService"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardDetailService"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardVO"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardDeleteService"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardUpdateService"/>
 </qualifiedTypeNameHistroy>
