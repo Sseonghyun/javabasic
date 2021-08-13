@@ -338,4 +338,102 @@ public class BoardDAO {
 } // end uphit
 	
 	
+	// 페이지 번호에 맞는 게시물 가져오기
+	public List<BoardVO> getpageList(int pageNum) {
+		// 내부에서 사용할 변수 선언
+		ArrayList<BoardVO> boardList = new ArrayList<>(); 
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		// 쿼리문(SELECT구문, 역순, 10개씩 pageNum에 맞춰서);
+		String sql = "SELECT * FROM jspboard ORDER BY bid DESC " +
+		"limit ?, 10 ";
+		try {
+			// 연결 구문을 다 작성해주세요. 리턴구문까지.
+            con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, pageNum);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				
+				board.setBid(rs.getInt("bid"));
+				board.setBname(rs.getString("bname"));
+				board.setBtitle(rs.getString("btitle"));
+				board.setBcontent(rs.getString("bcontent"));
+				board.setBdate(rs.getTimestamp("bdate"));
+				board.setBhit(rs.getInt("bhit"));
+				
+			    boardList.add(board);
+			}
+			
+		} catch(Exception e) {
+		     e.printStackTrace();     
+	     } finally {
+			try { // con 닫기
+				if(con!=null && !con.isClosed()) {
+					con.close();
+				} // pstmt 닫기
+				if(pstmt!=null && !pstmt.isClosed()) {
+					pstmt.close();
+				} // rs 닫기
+				if(rs!=null && !rs.isClosed()) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+	}
+		return boardList;
+} // pageList end
+	
+	
+	
+	public int getBoardCount() {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int countNum = 0;
+		String sql = "SELECT COUNT(*) FROM jspboard";
+				
+		try {
+			
+            con = ds.getConnection();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				countNum = rs.getInt(1);
+			}
+			
+	} catch(Exception e) {
+	     e.printStackTrace();     
+    } finally {
+		try { // con 닫기
+			if(con!=null && !con.isClosed()) {
+				con.close();
+			} // pstmt 닫기
+			if(pstmt!=null && !pstmt.isClosed()) {
+				pstmt.close();
+			} // rs 닫기
+			if(rs!=null && !rs.isClosed()) {
+				rs.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+}
+	return countNum;
+} // count end
+	
+	
 }

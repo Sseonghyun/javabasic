@@ -36,7 +36,6 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.IBoardService"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardWriteService"/>
-<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardDAO"/>
@@ -50,4 +49,13 @@
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardDeleteService"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardUpdateService"/>
+<fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.service.UserLoginService"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.service.IUserService"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.model.UsersDAO"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.service.UserJoinService"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.model.UsersVO"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.user.service.UserLogoutService"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>
