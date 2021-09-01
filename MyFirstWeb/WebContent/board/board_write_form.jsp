@@ -3,36 +3,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>글쓰기 창</h1>
-<!-- 내부에 글쓰기 폼을 생성해주세요
-타겟 주소는 /MyFirstWeb/write.do입니다. -->
+<div class="container">
+
+<div class="row">
+<h1 class="text-primary">글쓰기 창</h1>
+</div>
+
 <form action = "/MyFirstWeb/boardwrite.do" method = "post">
-<table border = "1">
-<tr>
-<td>글 제목</td>
-<td><input type = "text" name = "title"></td>
-</tr>
 
-<tr>
-<td>본문 </td>
-<td><textarea cols = "50" row = "10" name = "content"></textarea></td>
-</tr>
+<div class="row">
+<div class="col-md-2">
+<h4>글 제목</h4>
+</div>
+<div class="col-md-4">
+<input type = "text" name = "title" class="form-control">
+</div>
+</div>
 
-<tr>
-<td>글쓴이</td>
-<td><input type = "text" name = "writer"></td>
-</tr>
+<div class="row">
+<div class="col-md-2">
+<h4>글 본문</h4>
+</div>
+<div class="col-md-4">
+<textarea cols="50" rows="10" class="form-control" name = "content"></textarea>
+</div>
+</div>
 
-<tr>
-<td><input type = "submit" value = "글쓰기"></td>
-<td><input type = "submit" value = "초기화"></td>
-</tr>
+<div class="row">
+<div class="col-md-2">
+<h4>글쓴이</h4>
+</div>
+<div class="col-md-4">
+<input type = "text" name = "writer" class="form-control">
+</div>
+</div>
 
-</table>
+<div class="row">
+<div class="col-md-3">
+<button type ="submit" class="btn btn-primary">글쓰기</button>
+<button type ="reset" class="btn btn-info">초기화</button>
+</div>
+</div>
+
 </form>
+
+</div>
+
 </body>
 </html>

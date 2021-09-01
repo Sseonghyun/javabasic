@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <h1>게시물 목록</h1>
-<table border="1">
+<table class="table table-bordered table-hover">
    <thead>
      <tr>
           <th>글번호</th>
@@ -38,21 +39,27 @@
       표현할 글이 있는 경우에만 버튼을 표시함--%>
    <c:if test="${pageDTO.hasBoard() }">
    
+   <%-- 표현할 글이 있다면 부트스트랩 페이징처리 적용. --%>
+   <ul class="pagination justify-content-center">
+   
    <%-- 뒤로가기 버튼을 표시할지 말지 결정하는 부분 --%>
    <c:if test="${pageDTO.startPage > 10}" >
-   <a href = "/MyFirstWeb/boardselect.do?page=${pageDTO.startPage - 10}">[prev]</a>
+   <li class="page-item"><a class="page-link" href = "/MyFirstWeb/boardselect.do?page=${pageDTO.startPage - 10}">[«]</a></li>
    </c:if>
+   
    
    <%-- 페이지 번호 10개 묶음을 깔아주는 부분 --%>
    <c:forEach var = "pNo" begin = "${pageDTO.startPage }" end = "${pageDTO.endPage }">
-   <a href = "/MyFirstWeb/boardselect.do?page=${pNo}">[${pNo}]</a>
+   <li class="page-item"><a class="page-link" href = "/MyFirstWeb/boardselect.do?page=${pNo}">[${pNo}]</a></li>
    </c:forEach>
    
    <%-- 다음으로 가기 버튼을 표시할지 말지 결정하는 부분 --%>
    <c:if test="${pageDTO.endPage < pageDTO.totalPages }">
-   <a href = "/MyFirstWeb/boardselect.do?page=${pageDTO.startPage + 10}">[next]</a>
+   <li class="page-item"><a class="page-link" href = "/MyFirstWeb/boardselect.do?page=${pageDTO.startPage + 10}">[»]</a></li>
    </c:if>
    
+   </ul>
+   <%-- 페이지네이션 종료 --%>
    </c:if>
    <%-- 페이징 버튼 끝 --%>
    <br/>

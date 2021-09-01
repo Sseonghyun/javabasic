@@ -34,18 +34,14 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="kr.co.ictedu.board.service.IBoardService"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardWriteService"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardDAO"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardListService"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardDetailService"/>
-<fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardVO"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardDeleteService"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardUpdateService"/>
@@ -58,4 +54,10 @@
 <fullyQualifiedTypeName name="kr.co.ictedu.user.model.UsersVO"/>
 <fullyQualifiedTypeName name="kr.co.ictedu.user.service.UserLogoutService"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.service.IBoardService"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardDAO"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardVO"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.service.BoardPagingService"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="kr.co.ictedu.board.model.BoardPageDTO"/>
 </qualifiedTypeNameHistroy>
